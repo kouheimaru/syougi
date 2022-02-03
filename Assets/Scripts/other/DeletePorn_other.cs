@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DeletePorn_other : MonoBehaviour
 {
-    public GameObject upPorn;
     // Start is called before the first frame update
     private bool canJudge = true;
     void Awake()

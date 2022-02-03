@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
     public GameObject Pornking;
     public GameObject Pornknight;
     public GameObject Pornhisya;
+    public GameObject Porngin;
 
     public GameObject Porn_other;
     public GameObject Pornking_other;
     public GameObject Pornknight_other;
     public GameObject Pornhisya_other;
+    public GameObject Porngin_other;
 
     public int currentPlayer = 0;
     //盤面の情報設定
@@ -38,7 +40,7 @@ void Start()
         Instantiate(Porn, new Vector2(2, -1), Quaternion.identity);
         grid[3, 4] = 1;
         //下段
-        Instantiate(Pornhisya, new Vector2(-2, -2), Quaternion.identity);
+        Instantiate(Porngin, new Vector2(-2, -2), Quaternion.identity);
         grid[4, 0] = 1;
         Instantiate(Pornknight, new Vector2(-1, -2), Quaternion.identity);
         grid[4, 1] = 1;
@@ -70,7 +72,7 @@ void Start()
         grid[0, 2] = 1;
         Instantiate(Pornknight_other, new Vector2(1, 2), Quaternion.identity);
         grid[0, 3] = 1;
-        Instantiate(Pornhisya_other, new Vector2(2, 2), Quaternion.identity);
+        Instantiate(Porngin_other, new Vector2(2, 2), Quaternion.identity);
         grid[0, 4] = 1;
     }
 }

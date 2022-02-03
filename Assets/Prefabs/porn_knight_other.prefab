@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8064fef57a145044980acd398153d9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upPorn: {fileID: 4145080735731870767, guid: bd31ff9b79bb5b84c8d9ca5a9666c9b6, type: 3}
+  upPorn: {fileID: 2395972177195539974, guid: 2573f63485735b3448ea2a9255af5b06, type: 3}
 --- !u!50 &2470105802870419853
 Rigidbody2D:
   serializedVersion: 4
