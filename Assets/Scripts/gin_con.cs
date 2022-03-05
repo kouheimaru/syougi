@@ -26,7 +26,7 @@ public class gin_con : MonoBehaviour
     public void OnClickporn()
     {
         GameObject[] GameController = GameObject.FindGameObjectsWithTag("Player");
-
+        GameController[0].GetComponent<GameManager>().currentPorn = 2;
         if (GameController[0].GetComponent<GameManager>().currentPlayer == 0)
         {
             GameObject[] objects = GameObject.FindGameObjectsWithTag("tilepre");

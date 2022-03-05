@@ -5,9 +5,14 @@ using UnityEngine;
 public class hisya_con_other : MonoBehaviour
 {
     public GameObject tile;
+
+    // Start is called before the first frame update
     public void OnClickporn()
     {
         GameObject[] GameController = GameObject.FindGameObjectsWithTag("Player");
+        //駒の種類を更新する
+        GameController[0].GetComponent<GameManager>().currentPorn = 5;
+
         if (GameController[0].GetComponent<GameManager>().currentPlayer == 1)
         {
             GameObject[] objects = GameObject.FindGameObjectsWithTag("tilepre");
@@ -20,15 +25,15 @@ public class hisya_con_other : MonoBehaviour
             Vector2 pos = myTransform.position;
             //前の座標にオブジェクとがあるのか確認する
             //全体が共有するスクリプトで2次元配列で盤面の駒の有無を01等数字で管理
-            Debug.Log("イベントを受け取る");
             //上に移動
-            //下に移動する
             int i = 1;
-            //gridの範囲分だけ行う
-            while (pos.y + i<=2 && pos.y + i>=-2)
+
+            while (pos.y + i <= 3 && pos.y + i >= -3)
             {
                 GameObject tileobj;
-                if (GameController[0].GetComponent<GameManager>().grid[2 - Mathf.FloorToInt(pos.y) - i, Mathf.FloorToInt(pos.x) + 2] == 1)
+                Debug.Log(2 - Mathf.FloorToInt(pos.y) - i);
+                Debug.Log(Mathf.FloorToInt(pos.x) + 2);
+                if (GameController[0].GetComponent<GameManager>().grid[3 - Mathf.FloorToInt(pos.y) - i, Mathf.FloorToInt(pos.x) + 2] == 1)
                 {
                     //駒があったとき終了
                     tileobj = (GameObject)Instantiate(tile, new Vector2(pos.x, pos.y + i), Quaternion.identity);
@@ -41,17 +46,15 @@ public class hisya_con_other : MonoBehaviour
             }
             //下に移動する
             int n = 1;
-            //gridの範囲分だけ行う
-            while (pos.y - n <= 2 && pos.y -n >= -2)
+            while (pos.y - n <= 3 && pos.y - n >= -3)
             {
                 GameObject tileobj;
-                if (GameController[0].GetComponent<GameManager>().grid[2 - Mathf.FloorToInt(pos.y) + n, Mathf.FloorToInt(pos.x) + 2] == 1)
+                if (GameController[0].GetComponent<GameManager>().grid[3 - Mathf.FloorToInt(pos.y) + n, Mathf.FloorToInt(pos.x) + 2] == 1)
                 {
                     tileobj = (GameObject)Instantiate(tile, new Vector2(pos.x, pos.y - n), Quaternion.identity);
                     tileobj.transform.parent = this.transform;
                     break;
                 }
-
 
                 tileobj = (GameObject)Instantiate(tile, new Vector2(pos.x, pos.y - n), Quaternion.identity);
                 tileobj.transform.parent = this.transform;

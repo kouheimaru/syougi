@@ -23,6 +23,8 @@ public class chara_controller_knight : MonoBehaviour
     public void OnClickporn()
     {
         GameObject[] GameController = GameObject.FindGameObjectsWithTag("Player");
+        //更新する
+        GameController[0].GetComponent<GameManager>().currentPorn = 4;
         if (GameController[0].GetComponent<GameManager>().currentPlayer == 0)
         {
             GameObject[] objects = GameObject.FindGameObjectsWithTag("tilepre");

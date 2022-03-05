@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4610366480384611738}
   - component: {fileID: 5646044000671802454}
   - component: {fileID: 7835425647411647252}
+  - component: {fileID: -7702343183869107831}
   m_Layer: 0
   m_Name: upgrade
   m_TagString: tilepre
@@ -29,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7882517007351399154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.076000005, y: -0.365, z: -0.43426502}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.3, y: 2.3, z: 2.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.88550174, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bc1a550a4afe61f45a62e6bbf6628f93, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.4, y: 0.4}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -172,6 +173,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393cea3898d18904ea5c5c141dd271a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpObj: {fileID: 4145080735731870767, guid: bd31ff9b79bb5b84c8d9ca5a9666c9b6, type: 3}
-  UpObj_other: {fileID: 5226348348631753582, guid: c37c5eab62d62894aa6060eb86e25e5c,
+  UpObj_hisya_other: {fileID: 6048462049704336470, guid: 7725cbe3bb903ed498efdffea58c4d12,
     type: 3}
+  UpObj_gin_other: {fileID: 9117323428139390025, guid: cecaa16262f678b4ea30e72053e1edf2,
+    type: 3}
+  UpObj_hu_other: {fileID: 3201442531571700253, guid: 900d38458bce25c449549b822fa9dafd,
+    type: 3}
+  UpObj_kei_other: {fileID: 5906642176501478777, guid: eeb293cd4b6de3446b25bd206c2cff66,
+    type: 3}
+  UpObj_hisya: {fileID: 7191206071611927922, guid: 67632439a7232c2449a891250b20c847,
+    type: 3}
+  UpObj_gin: {fileID: 4871975531028726135, guid: 6971b50b1d641b44096eb764b02e631d,
+    type: 3}
+  UpObj_hu: {fileID: 6994801767050330295, guid: b89a74a296548e64da3d9f39016caaed,
+    type: 3}
+  UpObj_kei: {fileID: 7606332514504493750, guid: 985c4f42740e60d4aabe38f63cb35d1a,
+    type: 3}
+  Audio_Object: {fileID: 6147120273295916007, guid: b89134dd25549b846852ff79945b6eb4,
+    type: 3}
+--- !u!114 &-7702343183869107831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7882517007351399154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdabdd7b19031984b8c8261835d4e3e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

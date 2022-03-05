@@ -6,6 +6,7 @@ public class chara_controller : MonoBehaviour
 {
     public GameObject tile;
     GameObject Obj;
+    GameObject Obj_a;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class chara_controller : MonoBehaviour
     public void OnClickporn()
     {
         GameObject[] GameController = GameObject.FindGameObjectsWithTag("Player");
+        GameController[0].GetComponent<GameManager>().currentPorn = 6;
         if (GameController[0].GetComponent<GameManager>().currentPlayer == 0)
         {
             GameObject[] objects = GameObject.FindGameObjectsWithTag("tilepre");
@@ -34,6 +36,8 @@ public class chara_controller : MonoBehaviour
             Vector2 pos = myTransform.position;
             Obj = (GameObject)Instantiate (tile, new Vector2(pos.x, pos.y + 1), Quaternion.identity);
             Obj.transform.parent = this.transform;
+            Obj_a = (GameObject)Instantiate(tile, new Vector2(pos.x, pos.y - 1), Quaternion.identity);
+            Obj_a.transform.parent = this.transform;
 
         }
     }

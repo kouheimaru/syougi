@@ -14,21 +14,10 @@ public class chara_controlle_king : MonoBehaviour
     GameObject Obj_f;
     GameObject Obj_g;
     GameObject Obj_h;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnClickporn()
     {
         GameObject[] GameController = GameObject.FindGameObjectsWithTag("Player");
-
+        GameController[0].GetComponent<GameManager>().currentPorn = 1;
         if (GameController[0].GetComponent<GameManager>().currentPlayer == 0)
         {
             GameObject[] objects = GameObject.FindGameObjectsWithTag("tilepre");

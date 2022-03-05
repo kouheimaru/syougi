@@ -11,6 +11,7 @@ public class knigh_con_other : MonoBehaviour
     public void OnClickporn()
     {
         GameObject[] GameController = GameObject.FindGameObjectsWithTag("Player");
+        GameController[0].GetComponent<GameManager>().currentPorn = 4;
         if (GameController[0].GetComponent<GameManager>().currentPlayer == 1)
         {
             GameObject[] objects = GameObject.FindGameObjectsWithTag("tilepre");
