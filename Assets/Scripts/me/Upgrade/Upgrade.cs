@@ -18,6 +18,12 @@ public class Upgrade : MonoBehaviour
 
     public GameObject Audio_Object;
 
+    public Vector2 AdjustUnit(Vector2 vec)
+    {
+
+        return new Vector2((int)(vec.x + 0.5f * Mathf.Sign(vec.x)), (int)(vec.y + 0.5f * Mathf.Sign(vec.y)));
+    }
+
     private void Awake()
     {
         GameObject[] GameController = GameObject.FindGameObjectsWithTag("Player");
@@ -37,7 +43,8 @@ public class Upgrade : MonoBehaviour
         Instantiate(Audio_Object, transform.position, transform.rotation);
         //自分の座標を取得する
         Transform myTransform = this.transform;
-        Vector2 pos = myTransform.position;
+        Vector2 _pos = myTransform.position;
+        Vector2 pos = AdjustUnit(_pos);
         //親のオブジェクトを取得
         GameObject parentGameObject = transform.parent.gameObject;
 
