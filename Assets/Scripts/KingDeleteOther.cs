@@ -5,26 +5,47 @@ using UnityEngine.UI;
 
 public class KingDeleteOther : MonoBehaviour
 {
-    GameObject GameController;
+    private bool canJudge = true;
     // Start is called before the first frame update
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (canJudge)
+        {
+            // 衝突判定時のアクションをここに書く
+            GameObject GameController = GameObject.FindGameObjectWithTag("Player");
+            if (GameController.GetComponent<GameManager>().currentPlayer == 1)
+            {
+                if (other.CompareTag("me"))
+                {
+                    //負けたとき
+                    Destroy(this.gameObject);
+
+                }
+            }
+            canJudge = false;
+        }
+        if (other.CompareTag("king")||other.CompareTag("tilepre"))
+        {
+            canJudge = true;
+        }
+
+    }
     private void OnDestroy()
     {
-        GameController = GameObject.FindGameObjectWithTag("Player");
+        GameObject GameController = GameObject.FindGameObjectWithTag("Player");
         if (GameController.GetComponent<GameManager>().currentPlayer == 1)
         {
             Debug.Log("otherがまけた");
-            //UIを取得して、そこのテキストを変更する
+            //UIのゲームオブジェクトを取得する
             GameObject parent = GameObject.FindGameObjectWithTag("cavas");
-
-            GameObject child_text = parent.transform.Find("Text").gameObject;
+            GameObject child = parent.transform.Find("Text").gameObject;
             GameObject child_button = parent.transform.Find("Button").gameObject;
+            child.SetActive(true);
             child_button.SetActive(true);
-            child_text.SetActive(true);
             //UIのテキストの値を変更して、表示する
-            Text _text = child_text.GetComponent<Text>();
-            _text.text = "黒が勝利";
-
+            Text _text = child.GetComponent<Text>();
+            _text.text = "black win";
         }
-        Debug.Log("otherがmovve");
+ 
     }
 }

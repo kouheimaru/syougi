@@ -6,13 +6,6 @@ public class DeletePorn : MonoBehaviour
 {
     private bool canJudge = true;
     //変数を用意する
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Awake()
     {
      //変数を変更する 

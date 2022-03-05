@@ -5,8 +5,33 @@ using UnityEngine.UI;
 
 public class KingDelete : MonoBehaviour
 {
+    private bool canJudge = true;
     // Start is called before the first frame update
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (canJudge)
+        {
+            // 衝突判定時のアクションをここに書く
+            GameObject GameController = GameObject.FindGameObjectWithTag("Player");
+            if (GameController.GetComponent<GameManager>().currentPlayer == 0)
+            {
+                if (other.CompareTag("enemy"))
+                {
+                //負けたとき
+                Destroy(this.gameObject);
 
+                }
+            }
+
+
+            canJudge = false;
+        }
+        if (other.CompareTag("king") || other.CompareTag("tilepre"))
+        {
+            canJudge = true;
+        }
+
+    }
     private void OnDestroy()
     {
         GameObject GameController = GameObject.FindGameObjectWithTag("Player");
@@ -21,9 +46,8 @@ public class KingDelete : MonoBehaviour
             child_button.SetActive(true);
             //UIのテキストの値を変更して、表示する
             Text _text = child.GetComponent<Text>();
-            _text.text = "白が勝利";
+            _text.text = "white win";
         }
-        Debug.Log("meがmovve");
     }
 
 }

@@ -23,23 +23,21 @@ public class attack : MonoBehaviour
         Debug.Log("生成する位置");
         Debug.Log(pos.x);
         Debug.Log(pos.y);
+
         //駒を動かす
         Instantiate(parentGameObject, new Vector2(pos.x, pos.y), Quaternion.identity);
         //生成したgridの情報を変更する1
         GameController[0].GetComponent<GameManager>().grid[3 - Mathf.FloorToInt(pos.y), Mathf.FloorToInt(pos.x) + 2] = 1;
         //もとの駒の座標を取得する
         Vector2 pos_p = parentGameObject.transform.position;
-        //もとの駒のgridの情報を変更する0
-        Debug.Log("change grid to 0");
-        Debug.Log(3 - Mathf.FloorToInt(pos_p.y));
-        Debug.Log(Mathf.FloorToInt(pos_p.x) + 2);
+
         GameController[0].GetComponent<GameManager>().grid[3 - Mathf.FloorToInt(pos_p.y), Mathf.FloorToInt(pos_p.x) + 2] = 0;
         //もとの駒を削除
         Destroy(transform.parent.gameObject);
+
         //画面のタイルを削除する
         GameObject[] objects = GameObject.FindGameObjectsWithTag("tilepre");
         foreach (GameObject tile in objects)
-
         {
             Destroy(tile);
         }

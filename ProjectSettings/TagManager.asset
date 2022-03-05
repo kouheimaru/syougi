@@ -12,6 +12,7 @@ TagManager:
   - text
   - textui
   - cavas
+  - king
   layers:
   - Default
   - TransparentFX
